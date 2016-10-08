@@ -19,8 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j67-RO-pT1">
-                                <frame key="frameInset" minX="36" minY="96" width="140" height="140"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j67-RO-pT1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="buH-rI-ZAS"/>
+                                    <constraint firstAttribute="height" constant="125" id="jge-lZ-qob"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is a Description of the app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lp-GM-5p7">
@@ -29,8 +32,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RhM-I2-E5v">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RhM-I2-E5v">
                                 <frame key="frameInset" minX="139" minY="590" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -42,26 +46,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW3-RU-9MK">
-                                <frame key="frameInset" minX="192" minY="93" width="159" height="140"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-4O-UhL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="Qv2-GC-Znz"/>
+                                    <constraint firstAttribute="width" constant="125" id="gwG-tD-Qwa"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RhM-I2-E5v" secondAttribute="bottom" constant="120" id="Can-zu-ERe"/>
-                            <constraint firstItem="9lp-GM-5p7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Ebc-ib-euZ"/>
-                            <constraint firstItem="j67-RO-pT1" firstAttribute="top" secondItem="9lp-GM-5p7" secondAttribute="bottom" constant="45" id="HRu-LS-kPZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CW3-RU-9MK" secondAttribute="trailing" constant="10" id="IgJ-ws-gtt"/>
-                            <constraint firstItem="CW3-RU-9MK" firstAttribute="top" secondItem="9lp-GM-5p7" secondAttribute="bottom" constant="45" id="NKa-Fq-BaQ"/>
-                            <constraint firstItem="RhM-I2-E5v" firstAttribute="top" secondItem="SNu-OV-YIy" secondAttribute="bottom" constant="40" id="g5M-QQ-N0N"/>
-                            <constraint firstItem="CW3-RU-9MK" firstAttribute="leading" secondItem="j67-RO-pT1" secondAttribute="trailing" id="rm1-r9-Z0h"/>
-                            <constraint firstItem="j67-RO-pT1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="tsU-Zk-ahI"/>
+                            <constraint firstItem="SNu-OV-YIy" firstAttribute="top" secondItem="TFu-4O-UhL" secondAttribute="bottom" constant="96" id="1F2-3L-gyL"/>
+                            <constraint firstItem="9lp-GM-5p7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ebc-ib-euZ"/>
+                            <constraint firstItem="j67-RO-pT1" firstAttribute="top" secondItem="9lp-GM-5p7" secondAttribute="bottom" constant="47" id="HRu-LS-kPZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j67-RO-pT1" secondAttribute="trailing" constant="109" id="VV4-hh-bC7"/>
+                            <constraint firstItem="j67-RO-pT1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="109" id="aGX-E8-vIs"/>
+                            <constraint firstItem="TFu-4O-UhL" firstAttribute="top" secondItem="j67-RO-pT1" secondAttribute="bottom" constant="26" id="e6V-8i-m9W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TFu-4O-UhL" secondAttribute="trailing" constant="109" id="nZq-0A-ciJ"/>
+                            <constraint firstItem="TFu-4O-UhL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="109" id="ueQ-cp-b5y"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="Button1" destination="j67-RO-pT1" id="Qrb-Nx-DcM"/>
-                        <outlet property="Button2" destination="CW3-RU-9MK" id="8sj-TB-hCi"/>
+                        <outlet property="Button2" destination="TFu-4O-UhL" id="6cR-6e-TiV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
