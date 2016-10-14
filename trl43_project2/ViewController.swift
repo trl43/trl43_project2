@@ -29,7 +29,7 @@ class ViewController: UIViewController {
             return
         }
         
-        // create an array from the contents of this file
+        // Create an array from the contents of this file
         guard let charities = NSArray(contentsOfFile: path) else {
             print("Unable to open plist as array")
             return
@@ -105,16 +105,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func submitPressed(_ sender: AnyObject) {
+        self.submitButton.isUserInteractionEnabled = false
         self.view.endEditing(true)
         self.view.frame.origin.y = 0
         self.loadingIndicator.startAnimating()
-        var when = DispatchTime.now() + 5
-        DispatchQueue.main.asyncAfter(deadline: when) {
+        var time = DispatchTime.now() + 3
+        DispatchQueue.main.asyncAfter(deadline: time) {
             self.loadingIndicator.stopAnimating()
             self.submitButton.setTitle("Thank You!", for: .normal)
-            when = DispatchTime.now() + 10
-            DispatchQueue.main.asyncAfter(deadline: when) {
+            time = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: time) {
                 self.submitButton.setTitle("Submit", for: .normal)
+                self.submitButton.isUserInteractionEnabled = true
             }
         }
     }
