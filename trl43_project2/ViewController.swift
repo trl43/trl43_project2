@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet var wholeView: UIView!
     @IBOutlet var mainViewTapped: UITapGestureRecognizer!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var amountTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +30,14 @@ class ViewController: UIViewController {
         }
         
         // create an array from the contents of this file
-        guard let cats = NSArray(contentsOfFile: path) else {
+        guard let charities = NSArray(contentsOfFile: path) else {
             print("Unable to open plist as array")
             return
         }
         
         // Set the tiles of the buttons
-        topButton.setTitle((cats[0] as AnyObject) as? String, for: .normal)
-        bottomButton.setTitle((cats[1] as AnyObject) as? String, for: .normal)
+        self.topButton.setTitle((charities[0] as AnyObject) as? String, for: .normal)
+        self.bottomButton.setTitle((charities[1] as AnyObject) as? String, for: .normal)
         
         // shifts the view up for space for the keyboard
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: nil) {
@@ -68,13 +72,51 @@ class ViewController: UIViewController {
     }
     
     @IBAction func topButtonPressed(_ sender: UIButton) {
-        self.topButton.isSelected = true
-        self.topButton.backgroundColor = UIColor.green
+        
+        if(self.topButton.isSelected) {
+            self.bottomButton.isUserInteractionEnabled = true
+            self.bottomButton.isHidden = false
+            self.topButton.layer.cornerRadius = 0
+            self.topButton.isSelected = false
+        }else {
+            self.bottomButton.isUserInteractionEnabled = false
+            self.bottomButton.isHidden = true
+            self.topButton.layer.cornerRadius = 50
+            self.topButton.isSelected = true
+        }
+    }
+    
+    @IBAction func bottomButtonPressed(_ sender: UIButton) {
+        if(self.bottomButton.isSelected) {
+            self.topButton.isUserInteractionEnabled = true
+            self.topButton.isHidden = false
+            self.bottomButton.layer.cornerRadius = 0
+            self.bottomButton.isSelected = false
+        }else {
+            self.topButton.isUserInteractionEnabled = false
+            self.topButton.isHidden = true
+            self.bottomButton.layer.cornerRadius = 50
+            self.bottomButton.isSelected = true
+        }
+    }
+    
+    @IBAction func stepperPressed(_ sender: UIStepper) {
+        self.amountTextField.text = sender.value.description
     }
     
     @IBAction func submitPressed(_ sender: AnyObject) {
         self.view.endEditing(true)
         self.view.frame.origin.y = 0
+        self.loadingIndicator.startAnimating()
+        var when = DispatchTime.now() + 5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.loadingIndicator.stopAnimating()
+            self.submitButton.setTitle("Thank You!", for: .normal)
+            when = DispatchTime.now() + 10
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.submitButton.setTitle("Submit", for: .normal)
+            }
+        }
     }
     
     @IBAction func mainViewTapped(_ sender: UITapGestureRecognizer) {
