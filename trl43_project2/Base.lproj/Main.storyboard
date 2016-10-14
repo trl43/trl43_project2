@@ -19,60 +19,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="j67-RO-pT1">
-                                <color key="backgroundColor" red="0.1079357583916135" green="0.50506039604303465" blue="0.98970383405685425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="jge-lZ-qob"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Food For Dogs Foundation">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click one of the buttons below to choose which fund to donate to." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lp-GM-5p7">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="RhM-I2-E5v">
-                                <nil key="textColor"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-4O-UhL">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="j67-RO-pT1" userLabel="topButton">
+                                <color key="backgroundColor" red="0.1079357583916135" green="0.50506039604303465" blue="0.98970383405685425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="jge-lZ-qob"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Homes For Hounds">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="topButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="hO2-3k-gKU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-4O-UhL" userLabel="bottomButton">
                                 <color key="backgroundColor" red="0.97209596603654969" green="0.38504466907136142" blue="0.41264266505003522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="Qv2-GC-Znz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Cats">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKv-7T-mYb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RhM-I2-E5v">
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10000" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="I0B-Cm-dQ8"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Optional donation message." translatesAutoresizingMaskIntoConstraints="NO" id="SNu-OV-YIy">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TOR-IG-s3V" appends="YES" id="5qm-MW-pa1"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKv-7T-mYb" userLabel="submitButton">
                                 <color key="backgroundColor" red="0.0" green="0.89256312974213348" blue="0.027185190598531691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="7vh-m0-6yR"/>
+                                </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="I0B-Cm-dQ8"/>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Optional donation message." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-OV-YIy">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.98970383405685425" green="0.96309401926071325" blue="0.91108633204296063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="I0B-Cm-dQ8" firstAttribute="top" secondItem="RhM-I2-E5v" secondAttribute="bottom" constant="10" id="83d-CB-B9s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gKv-7T-mYb" secondAttribute="trailing" constant="75" id="Czq-bu-OEC"/>
                             <constraint firstItem="9lp-GM-5p7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="Ebc-ib-euZ"/>
                             <constraint firstItem="gKv-7T-mYb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="Evi-XU-SXQ"/>
                             <constraint firstItem="j67-RO-pT1" firstAttribute="top" secondItem="9lp-GM-5p7" secondAttribute="bottom" constant="47" id="HRu-LS-kPZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="I0B-Cm-dQ8" secondAttribute="trailing" constant="125" id="Nhc-Oa-70k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SNu-OV-YIy" secondAttribute="trailing" constant="20" id="QdP-8a-itE"/>
                             <constraint firstItem="RhM-I2-E5v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="U20-wW-XzQ"/>
                             <constraint firstItem="9lp-GM-5p7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="UGv-if-5qi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I0B-Cm-dQ8" secondAttribute="trailing" constant="125" id="VJG-Eq-pTt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j67-RO-pT1" secondAttribute="trailing" constant="50" id="VV4-hh-bC7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9lp-GM-5p7" secondAttribute="trailing" constant="20" id="Zuz-iz-9EG"/>
                             <constraint firstItem="j67-RO-pT1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="aGX-E8-vIs"/>
@@ -87,15 +99,32 @@
                             <constraint firstItem="SNu-OV-YIy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="z5n-c9-hH6"/>
                             <constraint firstItem="I0B-Cm-dQ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="125" id="zUj-qA-HYO"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZMS-ll-HP1" appends="YES" id="fra-hj-666"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="Button1" destination="j67-RO-pT1" id="Qrb-Nx-DcM"/>
-                        <outlet property="Button2" destination="TFu-4O-UhL" id="6cR-6e-TiV"/>
+                        <outlet property="bottomButton" destination="TFu-4O-UhL" id="Fy7-eE-kGP"/>
+                        <outlet property="mainViewTapped" destination="ZMS-ll-HP1" id="NPS-Lh-CtM"/>
+                        <outlet property="message" destination="SNu-OV-YIy" id="Flv-uA-7Xb"/>
+                        <outlet property="submitButton" destination="gKv-7T-mYb" id="EJV-CM-66e"/>
+                        <outlet property="topButton" destination="j67-RO-pT1" id="kds-oQ-oBh"/>
+                        <outlet property="wholeView" destination="8bC-Xf-vdC" id="spQ-sK-EDB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZMS-ll-HP1">
+                    <connections>
+                        <action selector="mainViewTapped:" destination="BYZ-38-t0r" id="wzJ-Pg-oo6"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="TOR-IG-s3V">
+                    <connections>
+                        <action selector="messageTapped:" destination="BYZ-38-t0r" id="MZd-qn-uEc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="116" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-222" y="116"/>
         </scene>
     </scenes>
 </document>
