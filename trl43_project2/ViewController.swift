@@ -20,6 +20,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let path = Bundle.main.path(forResource: "charity", ofType:"plist") else {
+            print("ERROR: could not get path to plist")
+            return
+        }
+        
+        // create an array from the contents of this file
+        guard let cats = NSArray(contentsOfFile: path) else {
+            print("Unable to open plist as array")
+            return
+        }
+        
+        // Set the tiles of the buttons
+        topButton.setTitle((cats[0] as AnyObject) as? String, for: .normal)
+        bottomButton.setTitle((cats[1] as AnyObject) as? String, for: .normal)
         
         // shifts the view up for space for the keyboard
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: nil) {
