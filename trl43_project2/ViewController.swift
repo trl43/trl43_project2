@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             
             notification in
             
-            print("HEREEEEEEEEEEEE\(notification.description)")
+            print("HERE1\(notification.description)")
             
             // find the size of the keyboard
             guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
@@ -64,21 +64,20 @@ class ViewController: UIViewController {
             self.view.frame.origin.y = -keyboardSize.height
         }
         
-        
         // shift the view back down
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: nil) {
             
             notification in
             
-            print("THEREEEEEEEEEEEEEE\(notification.description)")
+            print("HERE2\(notification.description)")
             
             self.submitButton.isHidden = false
             
             // move back to original position
             self.view.frame.origin.y = 0
         }
-        
     }
+    
     
     @IBAction func topButtonPressed(_ sender: UIButton) {
         
