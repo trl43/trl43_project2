@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var stepperLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -38,6 +41,9 @@ class ViewController: UIViewController {
         // Set the tiles of the buttons
         self.topButton.setTitle((charities[0] as AnyObject) as? String, for: .normal)
         self.bottomButton.setTitle((charities[1] as AnyObject) as? String, for: .normal)
+        self.topLabel.text = (charities[2] as AnyObject) as? String
+        self.moneyLabel.text = (charities[3] as AnyObject) as? String
+        self.stepperLabel.text = (charities[4] as AnyObject) as? String
         
         // shifts the view up for space for the keyboard
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: nil) {
@@ -52,6 +58,8 @@ class ViewController: UIViewController {
                 return
             }
             
+            self.submitButton.isHidden = true
+            
             // move the whole thing up
             self.view.frame.origin.y = -keyboardSize.height
         }
@@ -64,10 +72,11 @@ class ViewController: UIViewController {
             
             print("THEREEEEEEEEEEEEEE\(notification.description)")
             
+            self.submitButton.isHidden = false
+            
             // move back to original position
             self.view.frame.origin.y = 0
         }
-        
         
     }
     
